@@ -1,0 +1,60 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: μVision V5.28.0.0
+Copyright (C) 2019 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Longer95479 371573369@qq.com, HIT, LIC=SDAMM-XFDR9-CJ36Z-J519N-HIEFH-T058E
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.28.0.0
+Toolchain Path:  D:\Longer\Keil\Keil  Core\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.28.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.6.0
+Dialog DLL:      TCM.DLL V1.36.2.0
+ 
+<h2>Project:</h2>
+D:\Longer\电赛\my_programs\可穿戴式体温测量仪\Project\temp.uvprojx
+Project File Date:  10/01/2020
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'D:\Longer\Keil\Keil  Core\ARM\ARMCC\Bin'
+Build target 'temp'
+assembling startup_stm32f10x_md.s...
+compiling task_scheduler.c...
+..\Board\soc\task_scheduler.c(342): warning:  #177-D: function "PIT1_start_count"  was declared but never referenced
+  static void PIT1_start_count(void)
+..\Board\soc\task_scheduler.c(355): warning:  #177-D: function "PIT1_get_time"  was declared but never referenced
+  static uint32_t PIT1_get_time(void)
+..\Board\soc\task_scheduler.c: 2 warnings, 0 errors
+compiling LMT70.c...
+..\Board\soc\LMT70.c(99): warning:  #177-D: function "temp_aver_calcu"  was declared but never referenced
+  static void temp_aver_calcu(float temper)
+..\Board\soc\LMT70.c: 1 warning, 0 errors
+linking...
+Program Size: Code=17676 RO-data=3764 RW-data=280 ZI-data=2784  
+".\Objects\temp.axf" - 0 Error(s), 3 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F1xx_DFP.2.3.0.pack
+                Keil.STM32F1xx_DFP.2.3.0
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_temp
+  D:\Longer\Keil\Keil Pack\Keil\STM32F1xx_DFP\2.3.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
