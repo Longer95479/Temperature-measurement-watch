@@ -10,6 +10,7 @@
 #include "oled.h"
 #include "clock.h"
 #include "buzzer.h"
+#include "usart.h"
 
 static char temp_char[4];
  
@@ -300,8 +301,8 @@ void check_temp(void)
 /**
  * @brief	画实时温度折线
  */
-#define	TEMP_L	28
-#define	TEMP_H	38
+#define	TEMP_L	23
+#define	TEMP_H	33
 void draw_real_temp_line(void)
 {
 	int y_f, y_l;
@@ -360,7 +361,7 @@ void draw_real_temp_line(void)
 					OLED_show6x8char(87 + 8*3, num_y, temp_char[2]);
 					OLED_show6x8char(87 + 8*4, num_y, temp_char[3]);
 					
-					OLED_show6x8string(64, 0, "reatime");
+					//OLED_show6x8string(64, 0, "reatime");
 					
 					last_tem = tem;
 				}
@@ -409,7 +410,7 @@ void draw_real_temp_line(void)
 					OLED_show6x8char(87 + 8*3, num_y, temp_char[2]);
 					OLED_show6x8char(87 + 8*4, num_y, temp_char[3]);
 					
-					OLED_show6x8string(64, 0, "aver");
+					//OLED_show6x8string(64, 0, "aver");
 					
 					last_tem = tem;
 				}
@@ -418,4 +419,28 @@ void draw_real_temp_line(void)
 	}
 	
 }
+
+
+/**
+* @brief	串口发送温度
+ */
+void uart_send_temp(float temper)
+{
+	uint8_t cnt = 0;
+	uint8_t buffer[10];
+	uint16_t temp_u16 = (uint16_t)(temper * 10);
+	
+	buffer[cnt++] = 0xaa;
+	buffer[cnt++] = 0xaa;
+	buffer[cnt++] = 2;
+	buffer[cnt++] = *(uint8_t *)&temp_u16;						//先发送低位
+	buffer[cnt++] = *((uint8_t *)&temp_u16 + 1);			//再发送高位
+	buffer[cnt++] = 0x11;
+	
+	USARTx_Send(USART1, buffer, cnt);
+	
+}
+
+
+
 

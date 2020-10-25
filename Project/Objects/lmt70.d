@@ -37,3 +37,4 @@
 .\objects\lmt70.o: ..\Board\inc\clock.h
 .\objects\lmt70.o: ..\Board\inc\buzzer.h
 .\objects\lmt70.o: ..\Board\inc\GLOBAL.h
+.\objects\lmt70.o: ..\Board\inc\usart.h

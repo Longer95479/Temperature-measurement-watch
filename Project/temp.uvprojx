@@ -462,6 +462,11 @@
               <FileType>1</FileType>
               <FilePath>..\Board\soc\bsp_rtc.c</FilePath>
             </File>
+            <File>
+              <FileName>usart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Board\soc\usart.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

@@ -71,7 +71,7 @@ typedef enum {
   TASK1_TIMER_INIT_VAL = 200,
   TASK2_TIMER_INIT_VAL = 20,
   TASK3_TIMER_INIT_VAL = 200,
-  TASK4_TIMER_INIT_VAL = 1000,
+  TASK4_TIMER_INIT_VAL = 100,
   TASK5_TIMER_INIT_VAL = 20,
   TASK6_TIMER_INIT_VAL = 200,
 	TASK7_TIMER_INIT_VAL = 20
@@ -189,6 +189,7 @@ void task3_entry(void *arg)
 void task4_entry(void *arg)
 {
 	get_temp();
+	uart_send_temp(temp);
 }
 
 

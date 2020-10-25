@@ -13,14 +13,18 @@
 #include "bsp_exti.h"
 #include "bsp_rtc.h"
 #include "bsp_data.h"
+#include "usart.h"
 
 
 int main(void)
 {
 	delay_init();
+	#ifdef	C8T6
 	RTC_CheckAndConfig(&systmtime);
+	#endif
 	Led_Init(LED1);
 	OLED_init();
+	uart1_init(115200);
 	LMT70_ad_init();
 	adc_config_Init();//ADC≥ı ºªØ
 	EXTI_Key_Config();

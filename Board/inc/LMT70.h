@@ -26,4 +26,9 @@ void check_temp(void);
  */
 void draw_real_temp_line(void);
 
+/**
+* @brief	´®¿Ú·¢ËÍÎÂ¶È
+ */
+void uart_send_temp(float temper);
+
 #endif

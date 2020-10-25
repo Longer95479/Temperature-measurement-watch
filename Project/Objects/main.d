@@ -45,3 +45,4 @@
 .\objects\main.o: ..\Board\inc\bsp_rtc.h
 .\objects\main.o: ..\Board\inc\bsp_data.h
 .\objects\main.o: ..\Board\inc\GLOBAL.h
+.\objects\main.o: ..\Board\inc\usart.h
